@@ -49,7 +49,6 @@ _: {
     ./plugins/utils/whichkey.nix
     ./plugins/utils/extra_plugins.nix
     ./plugins/utils/mini.nix
-    ./plugins/utils/obsidian.nix
     ./plugins/utils/toggleterm.nix
     ./plugins/utils/web-devicons.nix
   ];
