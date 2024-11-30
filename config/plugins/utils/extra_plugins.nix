@@ -1,7 +1,4 @@
-{ pkgs, ... }:
-{
-  extraPlugins =
-    with pkgs.vimPlugins;
-    [
-    ];
+{pkgs, ...}: {
+  extraPlugins = with pkgs.vimPlugins; [
+  ];
 }

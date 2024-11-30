@@ -48,8 +48,8 @@
       # Minimum number of screen lines to keep above and below the cursor
       scrolloff = 8;
 
-      # Enable mouse support
-      mouse = "a";
+      # Disable mouse support
+      mouse = "";
 
       # Set folding method to manual
       foldmethod = "manual";
@@ -60,8 +60,8 @@
       # Wrap long lines at a character in 'breakat'
       linebreak = true;
 
-      # Disable spell checking
-      spell = false;
+      # Enable spell checking
+      spell = true;
 
       # Disable swap file creation
       swapfile = false;
