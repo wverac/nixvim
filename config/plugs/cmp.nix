@@ -66,5 +66,4 @@
       options.desc = "Toggle Autocomplete";
     }
   ];
-  # Add system-wide packages
 }

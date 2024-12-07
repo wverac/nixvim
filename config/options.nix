@@ -4,7 +4,7 @@
     vimAlias = true;
 
     opts = {
-      updatetime = 100; # faster completion
+      updatetime = 100;
       number = true;
       relativenumber = true;
 
@@ -17,7 +17,6 @@
       expandtab = true;
       shiftround = true;
       shiftwidth = 2;
-      # showmode = false;
       signcolumn = "yes";
       smartcase = true;
       smartindent = true;
@@ -29,7 +28,7 @@
       wildmode = "longest:full,full";
 
       swapfile = false;
-      undofile = true; # Build-in persistent undo
+      undofile = true;
       undolevels = 10000;
     };
     clipboard.providers.wl-copy.enable = true;
