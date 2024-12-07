@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   plugins.lsp = {
     enable = true;
     servers = {
@@ -12,30 +12,37 @@
       bashls.enable = true; # Bash
       yamlls.enable = true; # YAML
       terraformls.enable = true; # Terraform
+      ansiblels.enable = true; #Ansible
+      nginx_language_server.enable = true; #Nginx
     };
   };
+
   plugins.cmp = {
     autoEnableSources = true;
     settings.sources = [
-      {name = "nvim_lsp";}
-      {name = "path";}
-      {name = "buffer";}
+      { name = "nvim_lsp"; }
+      { name = "path"; }
+      { name = "buffer"; }
     ];
   };
   # Linting
   plugins.lint = {
     enable = true;
     lintersByFt = {
-      text = ["vale"];
-      json = ["jsonlint"];
-      markdown = ["vale"];
-      rst = ["vale"];
-      ruby = ["ruby"];
-      janet = ["janet"];
-      inko = ["inko"];
-      clojure = ["clj-kondo"];
-      dockerfile = ["hadolint"];
-      terraform = ["tflint"];
+      text = [ "vale" ];
+      json = [ "jsonlint" ];
+      markdown = [ "prettier" ];
+      ruby = [ "rubyfmt" ];
+      dockerfile = [ "hadolint" ];
+      terraform = [ "tofu_fmt" ];
+      tf = [ "tofu_fmt" ];
+      bash = [ "shellcheck" ];
+      yaml = ["yamlfmt"];
+      nix = [ "alejandra" ];
+      go = [ "golangci-lint" ];
+      python = [ "flake8" ];
+      haskell = [ "hlint" ];
+      lua = [ "selene" ];
     };
   };
 
