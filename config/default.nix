@@ -18,5 +18,6 @@
     prettierd
     nixfmt-classic
     stylua
+    python312Packages.flake8
   ];
 }
