@@ -1,4 +1,4 @@
-{...}: {
+{ ... }: {
   globals.mapleader = " ";
   keymaps = [
     {
@@ -146,6 +146,22 @@
         silent = true;
         desc = "Floating terminal";
       };
+    }
+
+    # Update Treesitter Parsers
+    {
+      key = "<Leader>tu";
+      action = ":TSUpdate<CR>";
+      mode = "n";
+      options.desc = "Update Treesitter Parsers";
+    }
+
+    # Formart nix with alejandra
+    {
+      key = "<Leader>ale";
+      action = ":!alejandra -qq<CR>";
+      mode = "n";
+      options.desc = "Format with Alejandra";
     }
 
     # Git
