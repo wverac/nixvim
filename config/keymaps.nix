@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   globals.mapleader = " ";
   keymaps = [
     {
@@ -151,17 +151,38 @@
     # Update Treesitter Parsers
     {
       key = "<Leader>tu";
-      action = ":TSUpdate<CR>";
+      action = "<cmd>TSUpdate<CR>";
       mode = "n";
       options.desc = "Update Treesitter Parsers";
     }
 
     # Formart nix with alejandra
+    # TODO: Condition to use it only in nix filetypes
     {
       key = "<Leader>ale";
-      action = ":!alejandra -qq<CR>";
+      action = ":%!alejandra -qq<CR>";
       mode = "n";
       options.desc = "Format with Alejandra";
+    }
+
+    # Notify dismiss all
+    {
+      key = "<Leader>nn";
+      action = ''
+        <cmd>lua require("notify").dismiss({ silent = true, pending = true })<cr>'';
+      mode = "n";
+      options.desc = "Dismiss All Notifications";
+    }
+
+    {
+      mode = "n";
+      key = "<leader>un";
+      action = ''
+        <cmd>lua require("notify").dismiss({ silent = true, pending = true })<cr>
+      '';
+      options = {
+        desc = "Dismiss All Notifications";
+      };
     }
 
     # Git
