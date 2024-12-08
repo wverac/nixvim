@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    ./theme.nix
+    ./themes/catppuccin.nix
     ./plugs/lsp.nix
     ./plugs/ui.nix
     ./plugs/cmp.nix

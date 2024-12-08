@@ -108,7 +108,16 @@
     }
     # Terminal
     {
-      key = "<Leader>h";
+      key = "<Leader>tw";
+      action = "<cmd> ToggleTerm <CR>";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Toggle Terminal Window";
+      };
+    }
+    {
+      key = "<Leader>th";
       action = "<cmd> ToggleTerm direction=horizontal <CR>";
       mode = "n";
       options = {
@@ -118,7 +127,7 @@
     }
 
     {
-      key = "<Leader>v";
+      key = "<Leader>tv";
       action = "<cmd>ToggleTerm direction=vertical size=60 <CR>";
       mode = "n";
       options = {
@@ -128,7 +137,7 @@
     }
 
     {
-      key = "<Leader>t";
+      key = "<Leader>tf";
       action = "<cmd> ToggleTerm direction=float <CR>";
       mode = "n";
       options = {
@@ -198,7 +207,7 @@
     # Tree
     {
       key = "<Leader>e";
-      action = "<cmd> NvimTreeToggle <CR>";
+      action = "<cmd> Neotree toggle <CR>";
       mode = "n";
       options.desc = "Toggle tree";
     }

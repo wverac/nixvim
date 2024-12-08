@@ -1,5 +1,46 @@
 {
   plugins = {
+    neo-tree = {
+      enable = true;
+      sources = [
+        "filesystem"
+        "buffers"
+        "git_status"
+        "document_symbols"
+      ];
+      addBlankLineAtTop = false;
+
+      filesystem = {
+        bindToCwd = false;
+        followCurrentFile = {
+          enabled = true;
+        };
+      };
+
+      defaultComponentConfigs = {
+        indent = {
+          withExpanders = true;
+          expanderCollapsed = "󰅂";
+          expanderExpanded = "󰅀";
+          expanderHighlight = "NeoTreeExpander";
+        };
+
+        gitStatus = {
+          symbols = {
+            added = " ";
+            conflict = "󰩌 ";
+            deleted = "󱂥";
+            ignored = " ";
+            modified = " ";
+            renamed = "󰑕";
+            staged = "󰩍";
+            unstaged = "";
+            untracked = " ";
+          };
+        };
+      };
+    };
+
     lualine = {
       enable = true;
       settings = {
@@ -8,9 +49,13 @@
         options.disabled_filetypes = {
           statusline = [
             "NvimTree"
+            "NeoTree"
+            "neo-tree"
           ];
           winbar = [
             "NvimTree"
+            "NeoTree"
+            "neo-tree"
           ];
         };
       };
@@ -25,8 +70,11 @@
       settings.options = {
         buffer_close_icon = null;
         close_icon = null;
-        always_show_bufferline = true;
-        separator_style = "thin";
+        always_show_bufferline = false;
+        separator_style = [
+          "|"
+          "|"
+        ];
         show_buffer_close_icons = false;
         diagnostics = "nvim_lsp";
         offsets = [
@@ -41,43 +89,6 @@
     toggleterm = {
       enable = true;
       settings.float_opts.border = "curved";
-    };
-
-    nvim-tree = {
-      enable = true;
-      git = {
-        enable = true;
-        ignore = false;
-      };
-      renderer = {
-        highlightGit = true;
-        rootFolderLabel = false;
-        indentMarkers = {
-          enable = true;
-          icons = {
-            bottom = "─";
-            edge = "│";
-            corner = "╰";
-          };
-        };
-        icons = {
-          glyphs = {
-            default = "󰈚 ";
-            folder = {
-              default = " ";
-              empty = " ";
-              emptyOpen = " ";
-              open = " ";
-              symlink = " ";
-            };
-            git = {
-              unmerged = "";
-            };
-          };
-        };
-      };
-      view.side = "left";
-      hijackCursor = true;
     };
 
     treesitter = {
