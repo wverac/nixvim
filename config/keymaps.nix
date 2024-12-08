@@ -10,7 +10,6 @@
         desc = "Clear search";
       };
     }
-
     # Line numbers
     {
       key = "<leader>n";
@@ -31,8 +30,7 @@
         desc = "Toggle relative line number";
       };
     }
-
-    # buffer tabs
+    # Buffer tabs
     {
       key = "<leader>b";
       action = "<cmd> enew <CR>";
@@ -80,7 +78,6 @@
         desc = "Pin buffer";
       };
     }
-
     # Window movement
     {
       key = "<C-j>";
@@ -109,15 +106,7 @@
       mode = "n";
       options.desc = "Move right";
     }
-
     # Terminal
-    {
-      key = "<C-x>";
-      action = "<C-\\><C-N>";
-      mode = "t";
-      options.desc = "Exit terminal";
-    }
-
     {
       key = "<Leader>h";
       action = "<cmd> ToggleTerm direction=horizontal <CR>";
@@ -139,7 +128,7 @@
     }
 
     {
-      key = "<Leader>ter";
+      key = "<Leader>t";
       action = "<cmd> ToggleTerm direction=float <CR>";
       mode = "n";
       options = {
@@ -147,7 +136,6 @@
         desc = "Floating terminal";
       };
     }
-
     # Update Treesitter Parsers
     {
       key = "<Leader>tu";
@@ -155,7 +143,6 @@
       mode = "n";
       options.desc = "Update Treesitter Parsers";
     }
-
     # Formart nix with alejandra
     # TODO: Condition to use it only in nix filetypes
     {
@@ -173,18 +160,6 @@
       mode = "n";
       options.desc = "Dismiss All Notifications";
     }
-
-    {
-      mode = "n";
-      key = "<leader>un";
-      action = ''
-        <cmd>lua require("notify").dismiss({ silent = true, pending = true })<cr>
-      '';
-      options = {
-        desc = "Dismiss All Notifications";
-      };
-    }
-
     # Git
     {
       key = "<Leader>gsr";
@@ -220,7 +195,6 @@
       mode = "n";
       options.desc = "Git blame";
     }
-
     # Tree
     {
       key = "<Leader>e";
@@ -228,7 +202,6 @@
       mode = "n";
       options.desc = "Toggle tree";
     }
-
     # Telescope stuff
     {
       key = "<Leader>ff";
@@ -278,65 +251,43 @@
       mode = "n";
       options.desc = "TODO telescope";
     }
-
-    ## LSP
-
-    {
-      key = "<Leader>rr";
-      action = "vim.lsp.buf.rename()";
-      mode = "n";
-      options.desc = "LSP Rename";
-    }
-
-    {
-      key = "<Leader>tw";
-      action = "<cmd> ToggleWrapMode <CR>";
-      mode = "n";
-      options.desc = "Toggle wrap mode";
-    }
   ];
 
-  plugins.lsp.keymaps.lspBuf = {
-    "K" = "hover";
-    "<Leader>gD" = "references";
-    "<Leader>gd" = "definition";
-  };
-
   plugins.which-key = {
-    settings.spec = [
-      {
-        __unkeyed-1 = "<Leader>gD";
-        desc = "Goto reference";
-      }
-
-      {
-        __unkeyed-1 = "<Leader>gd";
-        desc = "Goto definition";
-      }
-
-      {
-        __unkeyed-1 = "<Leader>d";
-        desc = "DAP options";
-      }
-
-      {
-        __unkeyed-1 = "<Leader>g";
-        desc = "Git options";
-      }
-
-      {
-        __unkeyed-1 = "<Leader>gs";
-        desc = "Git stage options";
-      }
-
-      {
-        __unkeyed-1 = "<Leader>gc";
-        desc = "Comment lines";
-      }
-      {
-        __unkeyed-1 = "<Leader>gcc";
-        desc = "Comment line";
-      }
-    ];
+    #   settings.spec = [
+    #     {
+    #       __unkeyed-1 = "<Leader>gD";
+    #       desc = "Goto reference";
+    #     }
+    #
+    #     {
+    #       __unkeyed-1 = "<Leader>gd";
+    #       desc = "Goto definition";
+    #     }
+    #
+    #     {
+    #       __unkeyed-1 = "<Leader>d";
+    #       desc = "DAP options";
+    #     }
+    #
+    #     {
+    #       __unkeyed-1 = "<Leader>g";
+    #       desc = "Git options";
+    #     }
+    #
+    #     {
+    #       __unkeyed-1 = "<Leader>gs";
+    #       desc = "Git stage options";
+    #     }
+    #
+    #     {
+    #       __unkeyed-1 = "<Leader>gc";
+    #       desc = "Comment lines";
+    #     }
+    #     {
+    #       __unkeyed-1 = "<Leader>gcc";
+    #       desc = "Comment line";
+    #     }
+    #   ];
   };
 }

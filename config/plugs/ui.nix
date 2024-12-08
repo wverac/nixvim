@@ -5,18 +5,12 @@
       settings = {
         # https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md
         optionstheme = "horizon";
-        settings.options.disabled_filetypes = {
+        options.disabled_filetypes = {
           statusline = [
-            "nvimtree"
             "NvimTree"
-            "nvim-tree"
-            "NvimTree_1"
           ];
           winbar = [
-            "nvimtree"
             "NvimTree"
-            "nvim-tree"
-            "NvimTree_1"
           ];
         };
       };
@@ -31,11 +25,8 @@
       settings.options = {
         buffer_close_icon = null;
         close_icon = null;
-        always_show_bufferline = false;
-        separator_style = [
-          "|"
-          "|"
-        ];
+        always_show_bufferline = true;
+        separator_style = "thin";
         show_buffer_close_icons = false;
         diagnostics = "nvim_lsp";
         offsets = [
@@ -132,9 +123,8 @@
       fileTypes = ["css" "scss"];
     };
 
-    image.enable = true; # image support
-    noice.enable = true; # popup cmd prompt
-
+    image.enable = true;
+    noice.enable = true;
     web-devicons.enable = true;
   };
 }
