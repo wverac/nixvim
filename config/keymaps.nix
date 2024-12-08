@@ -109,7 +109,7 @@
     # Terminal
     {
       key = "<Leader>tw";
-      action = "<cmd> ToggleTerm <CR>";
+      action = "<cmd> ToggleTerm direction=tab <CR>";
       mode = "n";
       options = {
         silent = true;
