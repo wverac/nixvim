@@ -50,12 +50,16 @@
           statusline = [
             "NvimTree"
             "NeoTree"
+            "lspsagaoutline"
             "neo-tree"
+            "sagaoutline"
           ];
           winbar = [
             "NvimTree"
             "NeoTree"
+            "lspsagaoutline"
             "neo-tree"
+            "sagaoutline"
           ];
         };
       };
