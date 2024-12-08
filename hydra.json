@@ -1,26 +1,14 @@
 {
-  "name": "nixvim",
-  "enabled": true,
-  "description": "Builds and tests for the NixVim configuration",
-  "jobsets": [
-    {
-      "name": "nixvim",
-      "enabled": true,
-      "description": "Default jobset",
-      "type": "git",
-      "repo": "https://github.com/wverac/nixvim.git",
-      "branch": "main",
-      "schedule": {
-        "type": "trigger",
-        "interval": 60
-      },
-      "inputs": {
-        "nixpkgs": {
-          "type": "nixpkgs",
-          "url": "https://github.com/nixos/nixpkgs.git",
-          "branch": "nixos-unstable"
-        }
-      }
+   "nixvim": {
+        "enabled": 1,
+        "type": 1,
+        "hidden": false,
+        "description": "NixVim configuration",
+        "flake": "github:wverac/nixvim",
+        "checkinterval": 60,
+        "schedulingshares": 100,
+        "enableemail": false,
+        "emailoverride": "",
+        "keepnr": 3
     }
-  ]
-}
+} 
