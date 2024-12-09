@@ -12,22 +12,21 @@
     }
     # Line numbers
     {
-      key = "<leader>n";
-      action = "<cmd> set nu! <CR>";
+      key = "<leader>ln";
+      action = "<cmd>set nonumber norelativenumber<CR>:lua vim.diagnostic.hide()<CR>:IBLDisable<CR>{ noremap = true, silent = true })<CR>";
       mode = "n";
       options = {
         silent = true;
-        desc = "Toggle line number";
+        desc = "Toggle line number off";
       };
     }
-
     {
-      key = "<leader>rn";
-      action = "<cmd> set rnu! <CR>";
+      key = "<leader>lr";
+      action = "<cmd>set number relativenumber<CR>:lua vim.diagnostic.show()<CR>:IBLEnable<CR>";
       mode = "n";
       options = {
         silent = true;
-        desc = "Toggle relative line number";
+        desc = "Toggle line number on";
       };
     }
     # Buffer tabs
