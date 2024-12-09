@@ -20,5 +20,7 @@
     nixfmt-classic
     stylua
     python312Packages.flake8
+    black
+    isort
   ];
 }
