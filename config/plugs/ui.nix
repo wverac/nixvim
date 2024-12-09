@@ -62,6 +62,22 @@
             "sagaoutline"
           ];
         };
+        options = {
+          normal = {
+            a = {
+              bg = "none";
+              gui = "bold";
+            };
+
+            b = {
+              bg = "none";
+            };
+
+            c = {
+              bg = "none";
+            };
+          };
+        };
       };
     };
 

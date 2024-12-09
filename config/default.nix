@@ -20,6 +20,10 @@
     nixfmt-classic
     stylua
     python312Packages.flake8
+    prettierd
+    vimPlugins.vim-prettier
+    python312Packages.autopep8
+    yapf
     black
     isort
   ];
