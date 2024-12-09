@@ -1,4 +1,8 @@
-{lib, ...}: {
+{
+  lib,
+  pkgs,
+  ...
+}: {
   plugins.conform-nvim = {
     enable = true;
     settings = {
@@ -15,7 +19,6 @@
         css = ["prettier"];
         html = ["prettier"];
         json = ["prettier"];
-        just = ["just"];
         lua = ["stylua"];
         markdown = ["prettier"];
         nix = ["alejandra"];
@@ -101,6 +104,7 @@
       marksman.enable = true; # Markdown
       nil_ls.enable = true; # Nix
       dockerls.enable = true; # Docker
+      docker_compose_language_service.enable = true; # Docker compose
       bashls.enable = true; # Bash
       yamlls.enable = true; # YAML
       terraformls.enable = true; # Terraform
@@ -284,6 +288,11 @@
       python = ["flake8"];
       haskell = ["hlint"];
       lua = ["selene"];
+    };
+    linters = {
+      hadolint = {
+        cmd = "${pkgs.hadolint}/bin/hadolint";
+      };
     };
   };
 

@@ -26,5 +26,8 @@
     yapf
     black
     isort
+    hadolint
+    rubyfmt
+    shfmt
   ];
 }
