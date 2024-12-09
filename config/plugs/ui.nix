@@ -66,7 +66,7 @@
     };
 
     which-key = {
-      enable = false;
+      enable = true;
     };
 
     bufferline = {

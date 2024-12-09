@@ -58,7 +58,7 @@
             }
             {
               on_press = {
-                __raw = "function() vim.cmd[[NvimTreeToggle]] end";
+                __raw = "function() vim.cmd[[Neotree toggle]] end";
               };
               opts = {
                 shortcut = "";

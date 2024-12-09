@@ -86,8 +86,12 @@
           flake8.enabled = true;
           isort.enabled = true;
           jedi.enabled = true;
+          pycodestyle.enabled = true;
+          pydocstyle.enabled = true;
+          pyflakes.enabled = true;
           mccabe.enabled = true;
           rope.enabled = true;
+          yapf.enabled = true;
         };
       };
       lua_ls.enable = true; #Lua
