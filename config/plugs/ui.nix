@@ -85,6 +85,13 @@
       enable = true;
     };
 
+    fugitive = {
+      enable = true;
+    };
+    lazygit = {
+      enable = true;
+    };
+
     bufferline = {
       enable = true;
       settings.options = {

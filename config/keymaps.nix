@@ -29,6 +29,90 @@
         desc = "Toggle line number on";
       };
     }
+    # Git
+    {
+      key = "<leader>gs";
+      action = "<cmd>Git<CR>";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Open Git status";
+      };
+    }
+    {
+      key = "<leader>gw";
+      action = "<cmd>Gwrite<CR>";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Stage the current file";
+      };
+    }
+    {
+      key = "<leader>gc";
+      action = "<cmd>Git commit<CR>";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Commit changes";
+      };
+    }
+    {
+      key = "<leader>gp";
+      action = "<cmd>Git push<CR>";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Push changes";
+      };
+    }
+    {
+      key = "<leader>gl";
+      action = "<cmd>Git pull<CR>";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Pull changes";
+      };
+    }
+    {
+      key = "<leader>gb";
+      action = "<cmd>Gblame<CR>";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "View blame for the current file";
+      };
+    }
+    {
+      key = "<leader>gd";
+      action = "<cmd>Gdiffsplit<CR>";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Diff against HEAD";
+      };
+    }
+    {
+      key = "<leader>go";
+      action = "<cmd>GBrowse<CR>";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Browse repository in Git's web UI";
+      };
+    }
+
+    # LazyGit
+    {
+      key = "<leader>lg";
+      action = "<cmd>LazyGit<CR>";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Open LazyGit interface";
+      };
+    }
     # Buffer tabs
     {
       key = "<leader>b";
