@@ -88,9 +88,6 @@
     fugitive = {
       enable = true;
     };
-    lazygit = {
-      enable = true;
-    };
 
     bufferline = {
       enable = true;

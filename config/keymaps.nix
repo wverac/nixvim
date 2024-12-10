@@ -21,7 +21,7 @@
       };
     }
     {
-      key = "<leader>lr";
+      key = "<leader>ll";
       action = "<cmd>set number relativenumber<CR>:lua vim.diagnostic.show()<CR>:IBLEnable<CR>";
       mode = "n";
       options = {
@@ -100,17 +100,6 @@
       options = {
         silent = true;
         desc = "Browse repository in Git's web UI";
-      };
-    }
-
-    # LazyGit
-    {
-      key = "<leader>lg";
-      action = "<cmd>LazyGit<CR>";
-      mode = "n";
-      options = {
-        silent = true;
-        desc = "Open LazyGit interface";
       };
     }
     # Buffer tabs
