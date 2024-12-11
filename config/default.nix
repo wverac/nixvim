@@ -12,6 +12,7 @@
   # globals.mapleader = " "; # defined in keymaps module
   extraPackages = with pkgs; [
     wl-clipboard
+    xdg-utils
     # Required by telescope live grep
     ripgrep
     # Required by CMP

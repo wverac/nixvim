@@ -5,7 +5,7 @@
       beacon.enable = true;
       ui.border = "rounded"; # One of none, single, double, rounded, solid, shadow
       hover = {
-        openCmd = "!firfox";
+        openCmd = "!brave";
         openLink = "gx";
       };
       symbolInWinbar = {
