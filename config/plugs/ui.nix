@@ -89,6 +89,10 @@
       enable = true;
     };
 
+    todo-comments = {
+      enable = true;
+    };
+
     bufferline = {
       enable = true;
       settings.options = {

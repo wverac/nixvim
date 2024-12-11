@@ -180,15 +180,6 @@
     }
     # Terminal
     {
-      key = "<Leader>tw";
-      action = "<cmd> ToggleTerm direction=tab <CR>";
-      mode = "n";
-      options = {
-        silent = true;
-        desc = "Toggle Terminal Window";
-      };
-    }
-    {
       key = "<Leader>th";
       action = "<cmd> ToggleTerm direction=horizontal <CR>";
       mode = "n";
@@ -313,21 +304,21 @@
     }
 
     {
-      key = "<Leader>tn";
+      key = "<Leader>tm";
       action = "<cmd> Telescope notify <CR>";
       mode = "n";
       options.desc = "Recent notifications";
     }
 
     {
-      key = "<Leader>te";
+      key = "<Leader>tq";
       action = "<cmd> TodoQuickFix <CR>";
       mode = "n";
       options.desc = "TODO summary";
     }
 
     {
-      key = "<Leader>tc";
+      key = "<Leader>tt";
       action = "<cmd> TodoTelescope <CR>";
       mode = "n";
       options.desc = "TODO telescope";
