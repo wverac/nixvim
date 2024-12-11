@@ -12,31 +12,22 @@
     }
     # Line numbers
     {
-      key = "<leader>ln";
-      action = "<cmd>set nonumber norelativenumber<CR>:lua vim.diagnostic.hide()<CR>:IBLDisable<CR>{ noremap = true, silent = true })<CR>";
+      key = "<leader>nl";
+      action = "<cmd>lua ToggleLinesAndDiagnostics()<CR>{ noremap = true, silent = truea })<CR>";
       mode = "n";
       options = {
         silent = true;
-        desc = "Toggle line number off";
-      };
-    }
-    {
-      key = "<leader>ll";
-      action = "<cmd>set number relativenumber<CR>:lua vim.diagnostic.show()<CR>:IBLEnable<CR>";
-      mode = "n";
-      options = {
-        silent = true;
-        desc = "Toggle line number on";
+        desc = "Toggle lines and LSP messages";
       };
     }
     # Git
     {
       key = "<leader>gs";
-      action = "<cmd>Git<CR>";
+      action = "<cmd>Telescope git_status<CR>";
       mode = "n";
       options = {
         silent = true;
-        desc = "Open Git status";
+        desc = "Git status";
       };
     }
     {
@@ -77,11 +68,11 @@
     }
     {
       key = "<leader>gb";
-      action = "<cmd>Gblame<CR>";
+      action = "<cmd>Gitsigns blame<CR>";
       mode = "n";
       options = {
         silent = true;
-        desc = "View blame for the current file";
+        desc = "Blame for the current file";
       };
     }
     {
@@ -93,6 +84,7 @@
         desc = "Diff against HEAD";
       };
     }
+    # FIXME: GBrowse
     {
       key = "<leader>go";
       action = "<cmd>GBrowse<CR>";
@@ -180,7 +172,17 @@
     }
     # Terminal
     {
-      key = "<Leader>th";
+      key = "<Leader>sn";
+      action = "<cmd> tabnew | terminal <CR>";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "New tab terminal";
+      };
+    }
+
+    {
+      key = "<Leader>sh";
       action = "<cmd> ToggleTerm direction=horizontal <CR>";
       mode = "n";
       options = {
@@ -190,7 +192,7 @@
     }
 
     {
-      key = "<Leader>tv";
+      key = "<Leader>sv";
       action = "<cmd>ToggleTerm direction=vertical size=60 <CR>";
       mode = "n";
       options = {
@@ -200,7 +202,7 @@
     }
 
     {
-      key = "<Leader>tf";
+      key = "<Leader>sf";
       action = "<cmd> ToggleTerm direction=float <CR>";
       mode = "n";
       options = {
@@ -208,15 +210,17 @@
         desc = "Floating terminal";
       };
     }
+    # NOTE: Not use it often but keep it just in case
     # Update Treesitter Parsers
-    {
-      key = "<Leader>tu";
-      action = "<cmd>TSUpdate<CR>";
-      mode = "n";
-      options.desc = "Update Treesitter Parsers";
-    }
-    # Formart nix with alejandra
+    # {
+    #   key = "<Leader>tu";
+    #   action = "<cmd>TSUpdate<CR>";
+    #   mode = "n";
+    #   options.desc = "Update Treesitter Parsers";
+    # }
+
     # TODO: Condition to use it only in nix filetypes
+    # Format nix with alejandra
     {
       key = "<Leader>ale";
       action = ":%!alejandra -qq<CR>";
@@ -227,45 +231,9 @@
     # Notify dismiss all
     {
       key = "<Leader>nn";
-      action = ''
-        <cmd>lua require("notify").dismiss({ silent = true, pending = true })<cr>'';
+      action = ''<cmd>lua require("notify").dismiss({ silent = true, pending = true })<cr>'';
       mode = "n";
       options.desc = "Dismiss All Notifications";
-    }
-    # Git
-    {
-      key = "<Leader>gsr";
-      action = ":Gitsigns reset_hunk <CR>";
-      mode = "n";
-      options.desc = "Reset hunk";
-    }
-
-    {
-      key = "<Leader>gsh";
-      action = ":Gitsigns stage_hunk <CR>";
-      mode = "n";
-      options.desc = "Stage hunk";
-    }
-
-    {
-      key = "<Leader>gsu";
-      action = ":Gitsigns undo_stage_hunk <CR>";
-      mode = "n";
-      options.desc = "Undo stage hunk";
-    }
-
-    {
-      key = "<Leader>gh";
-      action = ":Gitsigns preview_hunk <CR>";
-      mode = "n";
-      options.desc = "Preview hunk";
-    }
-
-    {
-      key = "<Leader>gb";
-      action = ":Gitsigns blame_line<CR>";
-      mode = "n";
-      options.desc = "Git blame";
     }
     # Tree
     {
@@ -276,28 +244,21 @@
     }
     # Telescope stuff
     {
-      key = "<Leader>ff";
+      key = "<Leader>tf";
       action = "<cmd> Telescope fd <CR>";
       mode = "n";
       options.desc = "Find files";
     }
 
     {
-      key = "<Leader>gsc";
-      action = "<cmd> Telescope git_commits <CR>";
-      mode = "n";
-      options.desc = "Git show commits";
-    }
-
-    {
-      key = "<Leader>fr";
+      key = "<Leader>tr";
       action = "<cmd> Telescope oldfiles <CR>";
       mode = "n";
       options.desc = "Find recents";
     }
 
     {
-      key = "<Leader>fg";
+      key = "<Leader>tg";
       action = "<cmd> Telescope live_grep <CR>";
       mode = "n";
       options.desc = "Telescope live grep";
@@ -314,7 +275,7 @@
       key = "<Leader>tq";
       action = "<cmd> TodoQuickFix <CR>";
       mode = "n";
-      options.desc = "TODO summary";
+      options.desc = "TodoQuickFix";
     }
 
     {
@@ -326,40 +287,74 @@
   ];
 
   plugins.which-key = {
-    #   settings.spec = [
-    #     {
-    #       __unkeyed-1 = "<Leader>gD";
-    #       desc = "Goto reference";
-    #     }
-    #
-    #     {
-    #       __unkeyed-1 = "<Leader>gd";
-    #       desc = "Goto definition";
-    #     }
-    #
-    #     {
-    #       __unkeyed-1 = "<Leader>d";
-    #       desc = "DAP options";
-    #     }
-    #
-    #     {
-    #       __unkeyed-1 = "<Leader>g";
-    #       desc = "Git options";
-    #     }
-    #
-    #     {
-    #       __unkeyed-1 = "<Leader>gs";
-    #       desc = "Git stage options";
-    #     }
-    #
-    #     {
-    #       __unkeyed-1 = "<Leader>gc";
-    #       desc = "Comment lines";
-    #     }
-    #     {
-    #       __unkeyed-1 = "<Leader>gcc";
-    #       desc = "Comment line";
-    #     }
-    #   ];
+    settings.spec = [
+      {
+        __unkeyed-1 = "<Leader>e";
+        group = "Toggle Neotree";
+        icon = "";
+      }
+
+      {
+        __unkeyed-1 = "<Leader>s";
+        group = "Terminal";
+        icon = " ";
+      }
+
+      {
+        __unkeyed-1 = "<Leader>g";
+        group = "Git";
+        icon = "";
+      }
+
+      {
+        __unkeyed-1 = "<Leader>n";
+        group = "Focus";
+        icon = "󰜺";
+      }
+
+      {
+        __unkeyed-1 = "<Leader>t";
+        group = "Telescope";
+        icon = "󰭎";
+      }
+    ];
   };
+
+  extraConfigLua = ''
+           -- Enable keybind to back to Normal mode from terminal
+              vim.api.nvim_set_keymap('t', '<Esc>', [[<C-\><C-n>]], { noremap = true, silent = true })
+              -- set modifiable on
+              vim.cmd([[
+          augroup TerminalSettings
+            autocmd!
+            autocmd TermOpen * setlocal modifiable
+          augroup END
+        ]])
+
+            -- Toggle Lines and Diagnostics
+    function ToggleLinesAndDiagnostics()
+      if vim.g._lines_and_diagnostics_visible == nil then
+        vim.g._lines_and_diagnostics_visible = true
+      end
+
+      if vim.g._lines_and_diagnostics_visible then
+        -- Hide line numbers and diagnostics
+        vim.opt.number = false
+        vim.opt.relativenumber = false
+        vim.diagnostic.hide()
+        vim.cmd("IBLDisable")
+        vim.notify("Line numbers and diagnostics hidden", "info")
+      else
+        -- Show line numbers and diagnostics
+        vim.opt.number = true
+        vim.opt.relativenumber = true
+        vim.diagnostic.show()
+        vim.cmd("IBLEnable")
+        vim.notify("Line numbers and diagnostics shown", "info")
+      end
+
+      vim.g._lines_and_diagnostics_visible = not vim.g._lines_and_diagnostics_visible
+    end
+
+  '';
 }

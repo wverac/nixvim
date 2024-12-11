@@ -33,18 +33,7 @@
     };
     clipboard.providers.wl-copy.enable = true;
     extraConfigLua = ''
-            vim.opt.mouse=""
-            -- Enable keybind to back to Normal mode from terminal
-            vim.api.nvim_set_keymap('t', '<Esc>', [[<C-\><C-n>]], { noremap = true, silent = true })
-            -- Open a terminal in a new tab
-            vim.api.nvim_set_keymap('n', '<leader>tn', ':tabnew | terminal<CR>', { noremap = true, silent = true })
-            -- set modifiable on
-            vim.cmd([[
-        augroup TerminalSettings
-          autocmd!
-          autocmd TermOpen * setlocal modifiable
-        augroup END
-      ]])
+      vim.opt.mouse=""
 
     '';
   };

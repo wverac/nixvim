@@ -85,6 +85,10 @@
       enable = true;
     };
 
+    gitsigns = {
+      enable = true;
+    };
+
     fugitive = {
       enable = true;
     };
@@ -128,9 +132,9 @@
       enable = true;
       settings = {
         scope = {
-          show_end = false;
+          show_end = true;
           show_exact_scope = true;
-          show_start = false;
+          show_start = true;
         };
       };
     };

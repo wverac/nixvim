@@ -36,7 +36,8 @@
           };
           treesitter = true;
           telescope.enabled = true;
-          indent_blankline.enabled = true;
+          # NOTE: already declared in ui.nix module
+          indent_blankline.enabled = false;
           mini = {
             enabled = true;
             indentscope_color = "rosewater";

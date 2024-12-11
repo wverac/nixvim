@@ -43,27 +43,26 @@
   };
 
   extraConfigLua = ''
-
-         local cmp_enabled = true
-           vim.api.nvim_create_user_command("ToggleAutoComplete", function()
-           	if cmp_enabled then
-         require("cmp").setup.buffer({ enabled = false })
-      require("notify")("Disabled Autocomplete")
-      cmp_enabled = true
-    else
-      require("cmp").setup.buffer({ enabled = true })
-      require("notify")("Enabled Autocomplete")
-      cmp_enabled = true
-           	end
-           end, {})
+    local cmp_enabled = true
+    vim.api.nvim_create_user_command("ToggleAutoComplete", function()
+      if cmp_enabled then
+        require("cmp").setup.buffer({ enabled = false })
+        require("notify")("Disabled Autocomplete", "info")
+        cmp_enabled = false
+      else
+        require("cmp").setup.buffer({ enabled = true })
+        require("notify")("Enabled Autocomplete", "info")
+        cmp_enabled = true
+      end
+    end, {})
   '';
 
   keymaps = [
     {
-      key = "<Leader>ta";
+      key = "<Leader>na";
       action = "<cmd> ToggleAutoComplete <CR>";
       mode = "n";
-      options.desc = "Toggle Autocomplete";
+      options.desc = "Toggle CMP Autocomplete";
     }
   ];
 }
