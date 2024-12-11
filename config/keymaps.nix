@@ -10,6 +10,34 @@
         desc = "Clear search";
       };
     }
+
+    # Custom keybinds
+    # NOTE: Not use it often but keep it just in case
+    # Update Treesitter Parsers
+    # {
+    #   key = "<Leader>tu";
+    #   action = "<cmd>TSUpdate<CR>";
+    #   mode = "n";
+    #   options.desc = "Update Treesitter Parsers";
+    # }
+
+    # TODO: Condition to use it only in nix filetypes
+    # Format nix with alejandra
+    {
+      key = "<Leader>xa";
+      action = ":%!alejandra -qq<CR>";
+      mode = "n";
+      options.desc = "Format with Alejandra";
+    }
+
+    # Notify dismiss all
+    {
+      key = "<Leader>nn";
+      action = ''<cmd>lua require("notify").dismiss({ silent = true, pending = true })<cr>'';
+      mode = "n";
+      options.desc = "Dismiss All Notifications";
+    }
+
     # Line numbers
     {
       key = "<leader>nl";
@@ -20,6 +48,29 @@
         desc = "Toggle lines and LSP messages";
       };
     }
+
+    #AddPythonShebang
+    {
+      key = "<leader>xp";
+      action = "<cmd>lua AddPythonShebang()<CR>{ noremap = true, silent = truea })<CR>";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Add Python shebang";
+      };
+    }
+
+    #AddBASHShebang
+    {
+      key = "<leader>xs";
+      action = "<cmd>lua AddBashShebang()<CR>{ noremap = true, silent = truea })<CR>";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Add BASH shebang";
+      };
+    }
+
     # Git
     {
       key = "<leader>gs";
@@ -84,6 +135,7 @@
         desc = "Diff against HEAD";
       };
     }
+
     # FIXME: GBrowse
     {
       key = "<leader>go";
@@ -94,6 +146,7 @@
         desc = "Browse repository in Git's web UI";
       };
     }
+
     # Buffer tabs
     {
       key = "<leader>b";
@@ -125,7 +178,7 @@
       };
     }
     {
-      key = "<leader>x";
+      key = "<leader>X";
       action = ":bd <CR>";
       mode = "n";
       options = {
@@ -142,6 +195,7 @@
         desc = "Pin buffer";
       };
     }
+
     # Window movement
     {
       key = "<C-j>";
@@ -210,31 +264,7 @@
         desc = "Floating terminal";
       };
     }
-    # NOTE: Not use it often but keep it just in case
-    # Update Treesitter Parsers
-    # {
-    #   key = "<Leader>tu";
-    #   action = "<cmd>TSUpdate<CR>";
-    #   mode = "n";
-    #   options.desc = "Update Treesitter Parsers";
-    # }
 
-    # TODO: Condition to use it only in nix filetypes
-    # Format nix with alejandra
-    {
-      key = "<Leader>ale";
-      action = ":%!alejandra -qq<CR>";
-      mode = "n";
-      options.desc = "Format with Alejandra";
-    }
-
-    # Notify dismiss all
-    {
-      key = "<Leader>nn";
-      action = ''<cmd>lua require("notify").dismiss({ silent = true, pending = true })<cr>'';
-      mode = "n";
-      options.desc = "Dismiss All Notifications";
-    }
     # Tree
     {
       key = "<Leader>e";
@@ -242,6 +272,7 @@
       mode = "n";
       options.desc = "Toggle tree";
     }
+
     # Telescope stuff
     {
       key = "<Leader>tf";
@@ -317,6 +348,17 @@
         group = "Telescope";
         icon = "󰭎";
       }
+      {
+        __unkeyed-1 = "<Leader>c";
+        group = "Copilot";
+        icon = "";
+      }
+
+      {
+        __unkeyed-1 = "<Leader>x";
+        group = "Utils";
+        icon = "";
+      }
     ];
   };
 
@@ -355,6 +397,19 @@
 
       vim.g._lines_and_diagnostics_visible = not vim.g._lines_and_diagnostics_visible
     end
+
+       -- Function to insert the shebang line
+       function AddPythonShebang()
+         if vim.bo.filetype == 'python' then
+             vim.api.nvim_buf_set_lines(0, 0, 0, false, { '#!/usr/bin/env python3' })
+           end
+       end
+
+       function AddBashShebang()
+         if vim.bo.filetype == 'sh' or vim.bo.filetype == 'bash' then
+           vim.api.nvim_buf_set_lines(0, 0, 0, false, { '#!/usr/bin/env bash' })
+         end
+       end
 
   '';
 }

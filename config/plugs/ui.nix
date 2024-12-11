@@ -146,10 +146,10 @@
       render = "minimal";
     };
 
-    nvim-colorizer = {
+    colorizer.settings = {
       enable = true;
       userDefaultOptions.names = false;
-      fileTypes = ["css" "scss"];
+      filetypes = ["css" "scss"];
     };
 
     image.enable = true;
