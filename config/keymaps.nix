@@ -71,6 +71,17 @@
       };
     }
 
+    # Lspsaga outline
+    {
+      key = "<leader>xo";
+      action = "<cmd>Lspsaga outline<CR>";
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Lspsaga outline";
+      };
+    }
+
     # Git
     {
       key = "<leader>gs";
@@ -352,6 +363,12 @@
         __unkeyed-1 = "<Leader>c";
         group = "Copilot";
         icon = "";
+      }
+
+      {
+        __unkeyed-1 = "<Leader>l";
+        group = "Lsp";
+        icon = "";
       }
 
       {
