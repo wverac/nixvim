@@ -379,8 +379,8 @@
 
       {
         __unkeyed-1 = "<Leader>l";
-        group = "Lsp";
-        icon = "";
+        group = "LSP";
+        icon = "";
       }
 
       {
