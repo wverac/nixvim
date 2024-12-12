@@ -329,66 +329,91 @@
   ];
 
   plugins.which-key = {
-    settings.spec = [
-      {
-        __unkeyed-1 = "<Leader>e";
-        group = "Toggle Neotree";
-        icon = "";
-      }
+    enable = true;
+    settings = {
+      icons = {
+        breadcrumb = "»";
+        group = "+";
+        separator = ""; # ➜
+      };
+      win = {
+        border = "rounded";
+        padding = [
+          1
+          1
+        ];
+        # FIXME: width.max and width.min? margin?
+        # height = [
+        #   2
+        #   10
+        # ];
+        # width = [
+        #   20
+        #   50
+        # ];
+      };
 
-      {
-        __unkeyed-1 = "<Leader>b";
-        desc = "New buffer";
-        icon = "";
-      }
+      spec = [
+        {
+          __unkeyed-1 = "<Leader>e";
+          group = "Toggle Neotree";
+          icon = "";
+        }
 
-      {
-        __unkeyed-1 = "<Leader>X";
-        desc = "Delete buffer";
-        icon = "";
-      }
+        {
+          __unkeyed-1 = "<Leader>b";
+          desc = "New buffer";
+          icon = "";
+        }
 
-      {
-        __unkeyed-1 = "<Leader>s";
-        group = "Terminal";
-        icon = " ";
-      }
+        {
+          __unkeyed-1 = "<Leader>X";
+          desc = "Delete buffer";
+          icon = "";
+        }
 
-      {
-        __unkeyed-1 = "<Leader>g";
-        group = "Git";
-        icon = "";
-      }
+        {
+          __unkeyed-1 = "<Leader>s";
+          group = "Terminal";
+          icon = " ";
+        }
 
-      {
-        __unkeyed-1 = "<Leader>n";
-        group = "Focus";
-        icon = "󰜺";
-      }
+        {
+          __unkeyed-1 = "<Leader>g";
+          group = "Git";
+          icon = "";
+        }
 
-      {
-        __unkeyed-1 = "<Leader>t";
-        group = "Telescope";
-        icon = "󰭎";
-      }
-      {
-        __unkeyed-1 = "<Leader>c";
-        group = "Copilot";
-        icon = "";
-      }
+        {
+          __unkeyed-1 = "<Leader>n";
+          group = "Focus";
+          icon = "󰜺";
+        }
 
-      {
-        __unkeyed-1 = "<Leader>l";
-        group = "LSP";
-        icon = "";
-      }
+        {
+          __unkeyed-1 = "<Leader>t";
+          group = "Telescope";
+          icon = "󰭎";
+        }
+        {
+          __unkeyed-1 = "<Leader>c";
+          group = "Copilot";
+          icon = "";
+        }
 
-      {
-        __unkeyed-1 = "<Leader>x";
-        group = "Utils";
-        icon = "";
-      }
-    ];
+        {
+          __unkeyed-1 = "<Leader>l";
+          group = "LSP";
+          icon = "";
+        }
+
+        {
+          __unkeyed-1 = "<Leader>x";
+          group = "Utils";
+          icon = "";
+        }
+      ];
+    };
   };
 
   extraConfigLua = ''
