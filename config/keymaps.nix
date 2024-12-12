@@ -337,6 +337,18 @@
       }
 
       {
+        __unkeyed-1 = "<Leader>b";
+        desc = "New buffer";
+        icon = "";
+      }
+
+      {
+        __unkeyed-1 = "<Leader>X";
+        desc = "Delete buffer";
+        icon = "";
+      }
+
+      {
         __unkeyed-1 = "<Leader>s";
         group = "Terminal";
         icon = " ";
@@ -374,7 +386,7 @@
       {
         __unkeyed-1 = "<Leader>x";
         group = "Utils";
-        icon = "";
+        icon = "";
       }
     ];
   };
