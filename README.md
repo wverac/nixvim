@@ -79,6 +79,11 @@ nixvim
 ├── hydra.json
 └── README.md
 ```
+
+### My NixOS configuration
+
+https://github.com/wverac/sysbofh
+
 ### TODO
 
 * Write a decent and useful TODO
