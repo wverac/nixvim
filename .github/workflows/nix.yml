@@ -1,0 +1,30 @@
+name: Nix Flake Check and Format
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+jobs:
+  check-nix:
+    name: Build, Check, and Format Nix Package
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      - name: Install Nix
+        uses: cachix/install-nix-action@v24
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+      - name: Install Alejandra
+        run: nix-env -i alejandra -f '<nixpkgs>'
+      - name: Flake update
+        run: nix flake update
+      - name: Run Alejandra Formatter
+        run: alejandra --check .
+      - name: Build the Nix Package
+        run: |
+          nix build -L -f .  # Builds the default package.
+      - name: Nix Flake Checker
+        uses: DeterminateSystems/flake-checker-action@v5
+      - name: Print Success Message
+        run: echo "Nix package built, formatted, and checked successfully!"
