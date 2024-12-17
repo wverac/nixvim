@@ -13,8 +13,8 @@
       notify_on_error = true;
 
       formatters_by_ft = {
-        sh = ["shfmt"];
-        python = ["black"];
+        sh = ["shellcheck" "shfmt"];
+        python = ["isort" "black"];
         docker = ["hadolint"];
         css = ["prettier"];
         html = ["prettier"];
@@ -25,7 +25,8 @@
         ruby = ["rubyfmt"];
         terraform = ["tofu_fmt"];
         tf = ["tofu_fmt"];
-        yaml = ["yamlfmt"];
+        #yaml = ["yamlfmt"]; # NOTE: Does not accept empty lines after keys
+        yaml = ["prettier"];
       };
     };
   };

@@ -38,10 +38,21 @@
       options.desc = "Dismiss All Notifications";
     }
 
+    # On demand conform format
+    {
+      key = "<leader>xf";
+      action = ''<cmd>lua require("conform").format({ async = true })<CR>'';
+      mode = "n";
+      options = {
+        silent = true;
+        desc = "Execute conform format";
+      };
+    }
+
     # Line numbers
     {
       key = "<leader>nl";
-      action = "<cmd>lua ToggleLinesAndDiagnostics()<CR>{ noremap = true, silent = truea })<CR>";
+      action = "<cmd>lua ToggleLinesAndDiagnostics()<CR>";
       mode = "n";
       options = {
         silent = true;
