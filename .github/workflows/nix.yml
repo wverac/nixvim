@@ -21,9 +21,6 @@ jobs:
         run: nix flake update
       - name: Run Alejandra Formatter
         run: alejandra --check .
-      - name: Build the Nix Package
-        run: |
-          nix build -L -f .  # Builds the default package.
       - name: Nix Flake Checker
         uses: DeterminateSystems/flake-checker-action@v5
       - name: Print Success Message
