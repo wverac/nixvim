@@ -23,5 +23,7 @@ jobs:
         run: alejandra --check .
       - name: Nix Flake Checker
         uses: DeterminateSystems/flake-checker-action@v5
+      - name: Build the Nix Package
+        run: nix build -L .#default
       - name: Print Success Message
         run: echo "Nix package built, formatted, and checked successfully!"
