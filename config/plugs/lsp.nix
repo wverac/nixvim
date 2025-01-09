@@ -296,30 +296,30 @@
       };
     };
   };
-
   plugins.copilot-chat = {
-    enable = true;
+    enable = false;
   };
 
   plugins.copilot-cmp = {
-    enable = true;
+    enable = false;
   };
   plugins.copilot-lua = {
-    enable = true;
-    suggestion = {
-      enabled = false;
-    };
-    panel = {
-      enabled = false;
+    enable = false;
+    settings = {
+      suggestion = {
+        enabled = false;
+      };
+      panel = {
+        enabled = false;
+      };
     };
   };
-
-  extraConfigLua = ''
-    require("copilot").setup({
-      suggestion = { enabled = false },
-      panel = { enabled = false },
-    })
-  '';
+  # extraConfigLua = ''
+  #   require("copilot").setup({
+  #     suggestion = { enabled = false },
+  #     panel = { enabled = false },
+  #   })
+  # '';
   keymaps = [
     {
       key = "<leader>ct";
