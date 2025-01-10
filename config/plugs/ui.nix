@@ -125,8 +125,8 @@
       enable = true;
       settings.indent.enable = true;
     };
-
-    nvim-autopairs.enable = true;
+    # NOTE: This is annoying using the corne keyboard
+    nvim-autopairs.enable = false;
 
     indent-blankline = {
       enable = true;
