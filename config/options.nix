@@ -33,7 +33,7 @@
     };
     clipboard.providers.wl-copy.enable = true;
     extraConfigLua = ''
-      vim.opt.mouse="a"
+      vim.opt.mouse=""
 
     '';
   };
