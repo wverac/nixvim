@@ -41,46 +41,6 @@
       };
     };
 
-    lualine = {
-      enable = true;
-      settings = {
-        # https://github.com/nvim-lualine/lualine.nvim/blob/master/THEMES.md
-        optionstheme = "horizon";
-        options.disabled_filetypes = {
-          statusline = [
-            "NvimTree"
-            "NeoTree"
-            "lspsagaoutline"
-            "neo-tree"
-            "sagaoutline"
-          ];
-          winbar = [
-            "NvimTree"
-            "NeoTree"
-            "lspsagaoutline"
-            "neo-tree"
-            "sagaoutline"
-          ];
-        };
-        options = {
-          normal = {
-            a = {
-              bg = "none";
-              gui = "bold";
-            };
-
-            b = {
-              bg = "none";
-            };
-
-            c = {
-              bg = "none";
-            };
-          };
-        };
-      };
-    };
-
     which-key = {
       enable = true;
     };

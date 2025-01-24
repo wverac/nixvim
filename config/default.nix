@@ -8,6 +8,7 @@
     ./keymaps.nix
     ./plugs/alpha.nix
     ./plugs/lspsaga.nix
+    ./plugs/lualine.nix
   ];
   # globals.mapleader = " "; # defined in keymaps module
   extraPackages = with pkgs; [
