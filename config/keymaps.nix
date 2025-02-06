@@ -63,7 +63,7 @@
     #AddPythonShebang
     {
       key = "<leader>xp";
-      action = "<cmd>lua AddPythonShebang()<CR>{ noremap = true, silent = truea })<CR>";
+      action = "<cmd>lua AddPythonShebang()<CR>";
       mode = "n";
       options = {
         silent = true;
@@ -74,7 +74,7 @@
     #AddBASHShebang
     {
       key = "<leader>xs";
-      action = "<cmd>lua AddBashShebang()<CR>{ noremap = true, silent = truea })<CR>";
+      action = "<cmd>lua AddBashShebang()<CR>";
       mode = "n";
       options = {
         silent = true;
