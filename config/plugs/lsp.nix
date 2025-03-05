@@ -84,7 +84,8 @@
     '';
     servers = {
       pylsp = {
-        enable = true;
+        # NOTE: Trouebleshooting this!
+        enable = false;
         settings.plugins = {
           black.enabled = true;
           flake8.enabled = true;
