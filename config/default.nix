@@ -30,7 +30,7 @@
     black
     isort
     hadolint
-    rubyfmt
+    #rubyfmt
     shfmt
   ];
 }

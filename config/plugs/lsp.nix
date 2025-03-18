@@ -22,7 +22,7 @@
         lua = ["stylua"];
         markdown = ["prettier"];
         nix = ["alejandra"];
-        ruby = ["rubyfmt"];
+        #ruby = ["rubyfmt"];
         terraform = ["tofu_fmt"];
         tf = ["tofu_fmt"];
         #yaml = ["yamlfmt"]; # NOTE: Does not accept empty lines after keys
@@ -279,7 +279,7 @@
       text = ["vale"];
       json = ["jsonlint"];
       markdown = ["prettier"];
-      ruby = ["rubyfmt"];
+      #ruby = ["rubyfmt"];
       dockerfile = ["hadolint"];
       terraform = ["tofu_fmt"];
       tf = ["tofu_fmt"];
