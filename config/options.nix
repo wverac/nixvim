@@ -1,4 +1,7 @@
 {
+  pkgs,
+  ...
+}: {
   config = {
     viAlias = true;
     vimAlias = true;
@@ -31,7 +34,8 @@
       undofile = true;
       undolevels = 10000;
     };
-    clipboard.providers.wl-copy.enable = true;
+    # Only enable wl-copy on Linux systems
+    clipboard.providers.wl-copy.enable = pkgs.stdenv.isLinux;
     extraConfigLua = ''
       vim.opt.mouse=""
 
