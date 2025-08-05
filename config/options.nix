@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   config = {
     viAlias = true;
     vimAlias = true;
