@@ -118,7 +118,7 @@
       bashls.enable = true; # Bash
       yamlls.enable = true; # YAML
       terraformls.enable = true; # Terraform
-      ansiblels.enable = true; #Ansible
+      # ansiblels.enable = true; #Ansible - using yamlls instead
       nginx_language_server.enable = true; #Nginx
     };
   };
