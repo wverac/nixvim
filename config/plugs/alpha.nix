@@ -118,7 +118,7 @@
         }
       ];
     };
-    illuminate.filetypesDenylist = ["alpha"];
+    illuminate.settings.filetypes_denylist = ["alpha"];
     lualine.settings.options.disabled_filetypes = {
       statusline = ["alpha"];
       winbar = ["alpha"];
