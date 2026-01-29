@@ -9,8 +9,11 @@
 
   # Common packages for all systems
   commonPackages = with pkgs; [
-    # Required by telescope live grep
+    # Required by telescope
     ripgrep
+    fd
+    # Required by treesitter and lspsaga
+    tree-sitter
     # Required by CMP and formatters
     alejandra
     nixpkgs-fmt

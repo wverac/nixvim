@@ -85,7 +85,15 @@
 
     treesitter = {
       enable = true;
-      settings.indent.enable = true;
+      settings = {
+        highlight.enable = true;
+        indent.enable = true;
+      };
+    };
+
+    mini = {
+      enable = true;
+      modules.icons = {};
     };
     # NOTE: This is annoying using the corne keyboard
     nvim-autopairs.enable = false;

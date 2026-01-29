@@ -30,6 +30,9 @@
       swapfile = false;
       undofile = true;
       undolevels = 10000;
+
+      spell = true;
+      spelllang = "en_us";
     };
     # Only enable wl-copy on Linux systems
     clipboard.providers.wl-copy.enable = pkgs.stdenv.isLinux;

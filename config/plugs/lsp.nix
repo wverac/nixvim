@@ -15,7 +15,6 @@
       formatters_by_ft = {
         sh = ["shellcheck" "shfmt"];
         python = ["isort" "black"];
-        docker = ["hadolint"];
         css = ["prettier"];
         html = ["prettier"];
         json = ["prettier"];
