@@ -18,7 +18,7 @@
     alejandra
     nixpkgs-fmt
     prettierd
-    nixfmt-classic
+    nixfmt
     stylua
     python312Packages.flake8
     vimPlugins.vim-prettier
