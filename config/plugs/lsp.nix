@@ -110,7 +110,8 @@
       cssls.enable = true; # CSS
       html.enable = true; # HTML
       pyright.enable = true; # Python
-      marksman.enable = true; # Markdown
+      # FIXME:
+      marksman.enable = !pkgs.stdenv.isDarwin; # Markdown - disabled on darwin (swift build fails)
       nil_ls.enable = true; # Nix
       dockerls.enable = true; # Docker
       docker_compose_language_service.enable = true; # Docker compose
@@ -365,5 +366,8 @@
     enable = true;
     settings.theme = "dark";
   };
-  plugins.render-markdown.enable = true;
+  plugins.render-markdown = {
+    enable = true;
+    settings.latex.enabled = false;
+  };
 }
