@@ -31,9 +31,17 @@
       undofile = true;
       undolevels = 10000;
 
-      spell = true;
+      spell = false;
       spelllang = "en_us";
     };
+    autoCmd = [
+      {
+        event = "FileType";
+        pattern = ["markdown" "text" "gitcommit" "plaintex" "tex"];
+        command = "setlocal spell";
+        desc = "Enable spell checking for prose filetypes";
+      }
+    ];
     # Only enable wl-copy on Linux systems
     clipboard.providers.wl-copy.enable = pkgs.stdenv.isLinux;
     extraConfigLua = ''

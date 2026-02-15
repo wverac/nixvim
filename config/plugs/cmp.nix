@@ -3,6 +3,7 @@
     lspkind.enable = true;
 
     cmp-nvim-lsp-signature-help.enable = true;
+    cmp-spell.enable = true;
     cmp = {
       enable = true;
       settings.sources = [
@@ -10,6 +11,7 @@
         {name = "nvim_lsp_signature_help";}
         {name = "path";}
         {name = "buffer";}
+        {name = "spell";}
         {name = "snippy";}
         {name = "luasnip";}
         {name = "cmp-dap";}

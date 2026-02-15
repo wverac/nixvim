@@ -156,6 +156,7 @@
               luasnip = '[SNIP]',
               buffer = '[BUF]',
               path = '[PATH]',
+              spell = '[SPELL]',
             }
 
             item.menu = menu_icon[entry.source.name]
