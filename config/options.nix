@@ -47,6 +47,25 @@
     extraConfigLua = ''
       vim.opt.mouse=""
 
+      -- Map common extension variants to core filetypes.
+      vim.filetype.add({
+        extension = {
+          mdx = "markdown",
+          tfvars = "terraform",
+        },
+        filename = {
+          [".gitlab-ci.yml"] = "yaml",
+          [".gitlab-ci.yaml"] = "yaml",
+          ["docker-compose.yml"] = "yaml",
+          ["docker-compose.yaml"] = "yaml",
+          ["compose.yml"] = "yaml",
+          ["compose.yaml"] = "yaml",
+        },
+        pattern = {
+          [".*values[^/]*%.ya?ml"] = "yaml",
+        },
+      })
+
     '';
   };
 }

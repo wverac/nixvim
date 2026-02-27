@@ -6,6 +6,26 @@
   # Helper to determine if we're on Darwin
   isDarwin = pkgs.stdenv.isDarwin;
   isLinux = pkgs.stdenv.isLinux;
+  treeSitterCli = pkgs.rustPlatform.buildRustPackage rec {
+    pname = "tree-sitter-cli";
+    version = "0.26.1";
+    src = pkgs.fetchFromGitHub {
+      owner = "tree-sitter";
+      repo = "tree-sitter";
+      rev = "v${version}";
+      hash = "sha256-k8X2qtxUne8C6znYAKeb4zoBf+vffmcJZQHUmBvsilA=";
+    };
+    cargoHash = "sha256-hnFHYQ8xPNFqic1UYygiLBWu3n82IkTJuQvgcXcMdv0=";
+    cargoBuildFlags = [
+      "-p"
+      "tree-sitter-cli"
+    ];
+    buildInputs = [pkgs.stdenv.cc.libc.dev];
+    nativeBuildInputs = [pkgs.llvmPackages.libclang];
+    LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
+    BINDGEN_EXTRA_CLANG_ARGS = "-isystem ${pkgs.stdenv.cc.libc.dev}/include";
+    doCheck = false;
+  };
 
   # Common packages for all systems
   commonPackages = with pkgs; [
@@ -13,7 +33,7 @@
     ripgrep
     fd
     # Required by treesitter and lspsaga
-    tree-sitter
+    treeSitterCli
     # Required by CMP and formatters
     alejandra
     nixpkgs-fmt

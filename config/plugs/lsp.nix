@@ -111,13 +111,28 @@
       html.enable = true; # HTML
       pyright.enable = true; # Python
       # FIXME:
-      marksman.enable = !pkgs.stdenv.isDarwin; # Markdown - disabled on darwin (swift build fails)
+      marksman = {
+        enable = !pkgs.stdenv.isDarwin; # Markdown - disabled on darwin (swift build fails)
+        filetypes = ["markdown"];
+      };
       nil_ls.enable = true; # Nix
       dockerls.enable = true; # Docker
-      docker_compose_language_service.enable = true; # Docker compose
+      docker_compose_language_service = {
+        enable = true; # Docker compose
+        filetypes = ["yaml"];
+      };
       bashls.enable = true; # Bash
-      yamlls.enable = true; # YAML
-      terraformls.enable = true; # Terraform
+      yamlls = {
+        enable = true; # YAML
+        filetypes = ["yaml"];
+      };
+      terraformls = {
+        enable = true; # Terraform
+        filetypes = [
+          "terraform"
+          "tf"
+        ];
+      };
       # ansiblels.enable = true; #Ansible - using yamlls instead
       nginx_language_server.enable = true; #Nginx
     };
