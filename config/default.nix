@@ -20,10 +20,15 @@
       "-p"
       "tree-sitter-cli"
     ];
-    buildInputs = [pkgs.stdenv.cc.libc.dev];
+    buildInputs =
+      if isLinux then [pkgs.stdenv.cc.libc.dev]
+      else if isDarwin then (with pkgs.darwin.apple_sdk.frameworks; [CoreFoundation Security])
+      else [];
     nativeBuildInputs = [pkgs.llvmPackages.libclang];
     LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
-    BINDGEN_EXTRA_CLANG_ARGS = "-isystem ${pkgs.stdenv.cc.libc.dev}/include";
+    BINDGEN_EXTRA_CLANG_ARGS =
+      if isLinux then "-isystem ${pkgs.stdenv.cc.libc.dev}/include"
+      else "";
     doCheck = false;
   };
 
