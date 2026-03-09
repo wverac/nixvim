@@ -21,12 +21,14 @@
       "tree-sitter-cli"
     ];
     buildInputs =
-      if isLinux then [pkgs.stdenv.cc.libc.dev]
+      if isLinux
+      then [pkgs.stdenv.cc.libc.dev]
       else [];
     nativeBuildInputs = [pkgs.llvmPackages.libclang];
     LIBCLANG_PATH = "${pkgs.llvmPackages.libclang.lib}/lib";
     BINDGEN_EXTRA_CLANG_ARGS =
-      if isLinux then "-isystem ${pkgs.stdenv.cc.libc.dev}/include"
+      if isLinux
+      then "-isystem ${pkgs.stdenv.cc.libc.dev}/include"
       else "";
     doCheck = false;
   };
