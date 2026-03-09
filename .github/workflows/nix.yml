@@ -17,14 +17,8 @@ jobs:
         with:
           nix_path: nixpkgs=channel:nixos-unstable
 
-      - name: Install Alejandra
-        run: nix-env -i alejandra -f '<nixpkgs>'
-
-      - name: Flake update
-        run: nix flake update
-
       - name: Run Alejandra Formatter
-        run: alejandra --check .
+        run: nix run nixpkgs#alejandra -- --check .
 
       - name: Nix Flake Checker
         uses: DeterminateSystems/flake-checker-action@v5
