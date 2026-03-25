@@ -1,6 +1,9 @@
-{
+{pkgs, ...}: {
+  extraLuaPackages = ps: [ps.jsregexp];
+
   plugins = {
     lspkind.enable = true;
+    luasnip.enable = true;
 
     cmp-nvim-lsp-signature-help.enable = true;
     cmp-spell.enable = true;
