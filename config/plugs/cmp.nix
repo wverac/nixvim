@@ -40,7 +40,10 @@
       sources.formatting = {
         alejandra.enable = true;
         nixpkgs_fmt.enable = true;
-        prettier.enable = true;
+        prettier = {
+          enable = true;
+          package = pkgs.lib.mkDefault pkgs.prettier;
+        };
         prettierd.enable = true;
         stylua.enable = true;
       };

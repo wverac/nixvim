@@ -286,7 +286,10 @@
       alejandra.enable = true;
       hclfmt.enable = true;
       opentofu_fmt.enable = true;
-      prettier.enable = true;
+      prettier = {
+        enable = true;
+        package = pkgs.prettier;
+      };
       sqlformat.enable = true;
       stylua.enable = true;
       yamlfmt.enable = true;
