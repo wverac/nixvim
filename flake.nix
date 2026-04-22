@@ -27,6 +27,9 @@
         pkgsWithConfig = import inputs.nixpkgs {
           inherit system;
           config = nixpkgsConfig;
+          overlays = [
+            (import ./overlays/silence-treesitter-legacy.nix)
+          ];
         };
         nixvimLib = nixvim.lib.${system};
         nixvim' = nixvim.legacyPackages.${system};
