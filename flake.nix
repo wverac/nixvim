@@ -29,6 +29,7 @@
           config = nixpkgsConfig;
           overlays = [
             (import ./overlays/silence-treesitter-legacy.nix)
+            (import ./overlays/fix-nvim-config-pname.nix)
           ];
         };
         nixvimLib = nixvim.lib.${system};
