@@ -47,7 +47,6 @@
     nixfmt
     stylua
     python312Packages.flake8
-    vimPlugins.vim-prettier
     python312Packages.autopep8
     yapf
     black
