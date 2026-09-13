@@ -104,7 +104,7 @@
       pyright.enable = true; # Python
       # FIXME:
       marksman = {
-        enable = !pkgs.stdenv.isDarwin; # Markdown - disabled on darwin (swift build fails)
+        enable = !pkgs.stdenv.hostPlatform.isDarwin; # Markdown - disabled on darwin (swift build fails)
         filetypes = ["markdown"];
       };
       nil_ls.enable = true; # Nix

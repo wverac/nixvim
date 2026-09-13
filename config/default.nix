@@ -4,8 +4,8 @@
   ...
 }: let
   # Helper to determine if we're on Darwin
-  isDarwin = pkgs.stdenv.isDarwin;
-  isLinux = pkgs.stdenv.isLinux;
+  isDarwin = pkgs.stdenv.hostPlatform.isDarwin;
+  isLinux = pkgs.stdenv.hostPlatform.isLinux;
   treeSitterCli = pkgs.rustPlatform.buildRustPackage rec {
     pname = "tree-sitter-cli";
     version = "0.26.1";
